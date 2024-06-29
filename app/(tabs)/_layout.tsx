@@ -4,6 +4,7 @@ import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { StyleSheet, View, Text } from 'react-native';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -11,8 +12,11 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: 'yellow',
+        tabBarInactiveTintColor: '#9A8EB2',
         headerShown: false,
+        tabBarStyle: styles.tabBar,
       }}>
       <Tabs.Screen
         name="index"
@@ -32,6 +36,27 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="search"
+        options={{
+          title: 'Search',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'search' : 'search-outline'} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  tabBar: {
+    // flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    backgroundColor: '#160143',
+    height: 90,
+  //   borderRadius: 8,
+  //   color: 'white',
+  },
+});
