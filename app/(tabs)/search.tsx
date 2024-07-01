@@ -13,6 +13,7 @@ export default function SearchScreen() {
         <ImageBackground source={backgroundimage} style={styles.background}>  
       <View style={styles.title}>
         <Text style={styles.text}>Groups</Text>
+        {/* <Text style={{color:'white'}}>hello</Text> */}
       </View>
       </ImageBackground>
     );
