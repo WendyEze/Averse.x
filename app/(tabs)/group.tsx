@@ -4,6 +4,7 @@ import React from 'react';
 // import { ThemedView } from '@/components/ThemedView';
 // import { StyleSheet, Image, Platform } from 'react-native';
 import { StyleSheet, View, Text, ImageBackground } from 'react-native';
+import GButton from '@/components/searchassets/gbutton';
 
 const backgroundimage = require('@/assets/images/background.jpg')
 
@@ -14,6 +15,17 @@ export default function SearchScreen() {
       <View style={styles.title}>
         <Text style={styles.text}>Groups</Text>
         {/* <Text style={{color:'white'}}>hello</Text> */}
+        <GButton
+          image={require('@/assets/images/image 9.png')}
+          title="Naruto Fans"
+          // onPress={() => navigation.navigate('Info')}
+        />
+
+      <GButton
+          image={require('@/assets/images/image 9.png')}
+          title="Naruto DieHards"
+          // onPress={() => navigation.navigate('Info')}
+        />
       </View>
       </ImageBackground>
     );
@@ -30,6 +42,7 @@ export default function SearchScreen() {
     text:{
         color: "#fff",
         fontSize: 20,
+        marginBottom: 20,
     },
 
     background: {

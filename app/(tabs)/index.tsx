@@ -10,6 +10,7 @@ import {
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import HButton from '@/components/homeassets/homebutton';
 
 
 const backgroundimage = require('@/assets/images/background.jpg')
@@ -29,8 +30,8 @@ export default function HomeScreen() {
           </View>
 
           <View style={styles.usercontainer}>
-            <Text style ={{color: 'white', fontSize: 18 }}>Josh</Text>
-            <Text style={{ color: 'grey', fontSize: 12 }}>@luffy_fan</Text>
+            <Text style ={{color: 'white', fontSize: 22, fontFamily: 'BebaNeue', letterSpacing: .9}}>Josh</Text>
+            <Text style={{ color: 'grey', fontSize: 12, fontFamily: 'BebaNeue', letterSpacing: .9,}}>@luffy_fan</Text>
 
             <View style={styles.detailcontainer}>
               <View style={styles.time}>
@@ -38,7 +39,7 @@ export default function HomeScreen() {
                   source={require('@/assets/images/time.png')}
                   style={{ width: 25, height: 25, marginBottom: 10 }}
                 />
-                <Text style={{ color: 'white', fontWeight: 'bold' }}>
+                <Text style={{ color: 'white', fontWeight: 'bold', fontFamily: 'BebaNeue', letterSpacing: .9, }}>
                   value
                 </Text>
               </View>
@@ -48,7 +49,7 @@ export default function HomeScreen() {
                   source={require('@/assets/images/point.png')}
                   style={{ width: 30, height: 25, marginBottom: 10 }}
                 />
-                <Text style={{ color: 'white', fontWeight: 'bold' }}>
+                <Text style={{ color: 'white', fontWeight: 'bold', fontFamily: 'BebaNeue', letterSpacing: .9, }}>
                   value
                 </Text>
               </TouchableOpacity>
@@ -60,7 +61,7 @@ export default function HomeScreen() {
                 style={{ width: 40, height: 40, marginLeft:10}}
               />
               <Text
-                style={{ color: 'white', fontWeight: 'bold', marginLeft: 10 }}>
+                style={{ color: 'white', fontWeight: 'bold', marginLeft: 10, fontFamily: 'BebaNeue', letterSpacing: .9, }}>
                 1. Naruto {'\n'}
                 2. One Piece {'\n'}
                 3. Hunter x Hunter
@@ -68,6 +69,11 @@ export default function HomeScreen() {
             </View>
           </View>
         </View>
+
+        <HButton image ={require('@/assets/images/done.png')}  title = 'Completed' value ='4'/>
+        <HButton image ={require('@/assets/images/watch.png')}  title = 'Watching' value ='3'/>
+        <HButton image ={require('@/assets/images/queue.png')}  title = 'Queue' value ='9'/>
+
     </SafeAreaView>
 
     </ImageBackground>

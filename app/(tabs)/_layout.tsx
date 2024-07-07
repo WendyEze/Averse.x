@@ -25,6 +25,21 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
           ),
+          tabBarLabel: ({ focused, color }) => (
+            <Text style={[styles.tabBarLabel, { color }]}>{'Home'}</Text>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="group"
+        options={{
+          title: 'Group',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'people' : 'people-outline'} color={color} />
+          ),
+          tabBarLabel: ({ focused, color }) => (
+            <Text style={[styles.tabBarLabel, { color }]}>{'Group'}</Text>
+          ),
         }}
       />
       <Tabs.Screen
@@ -32,16 +47,22 @@ export default function TabLayout() {
         options={{
           title: 'Explore',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'search' : 'search-outline'} color={color} />
+          ),
+          tabBarLabel: ({ focused, color }) => (
+            <Text style={[styles.tabBarLabel, { color }]}>{'Explore'}</Text>
           ),
         }}
       />
       <Tabs.Screen
-        name="search"
+        name="map"
         options={{
-          title: 'Search',
+          title: 'Map',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'search' : 'search-outline'} color={color} />
+            <TabBarIcon name={focused ? 'map' : 'map-outline'} color={color} />
+          ),
+          tabBarLabel: ({ focused, color }) => (
+            <Text style={[styles.tabBarLabel, { color }]}>{'Map'}</Text>
           ),
         }}
       />
@@ -58,5 +79,10 @@ const styles = StyleSheet.create({
     height: 90,
   //   borderRadius: 8,
   //   color: 'white',
+  },
+  tabBarLabel: {
+    fontFamily: 'BebasNeue-Regular',
+    fontSize: 13, // Adjust the size as needed
+    letterSpacing: .9,
   },
 });
