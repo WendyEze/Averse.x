@@ -7,18 +7,31 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { SafeAreaView } from 'react-native-safe-area-context';
 const backgroundimage = require('@/assets/images/background.jpg')
-import { StyleSheet, View, Text, ImageBackground, TouchableOpacity, Image} from 'react-native';
+import React, { useState } from 'react';
+
+import { StyleSheet, View, Text, ImageBackground, TouchableOpacity, Image, TextInput} from 'react-native';
 // import { SearchBar } from 'react-native-elements';
 
 export default function TabTwoScreen() {
+
+  const [text, setText] = useState('');
+
+  const handleChangeText = (newText) => {
+    setText(newText);
+  };
+  
   return (
    <ImageBackground source={backgroundimage} style={styles.background}>  
       <View style={styles.title}>
         <Text style={styles.text}>Explore</Text>
         {/* searchbar */}
-        <View style={styles.searchbox}>
-          <Text style={{color:'white', fontFamily: 'BebaNeue',}}>Search here</Text>
-        </View>
+        <TextInput style={styles.searchbox} 
+        placeholder='Search Here'
+        onChangeText={handleChangeText}
+        value={text}
+        >
+          {/* <Text style={{color:'white', fontFamily: 'BebaNeue',}}>Search here</Text> */}
+        </TextInput>
 
         {/* anime news */}
 
@@ -26,7 +39,7 @@ export default function TabTwoScreen() {
           <Text style={{color:'black', fontFamily: 'BebaNeue', fontSize: 18,}}>Explore News</Text>
         </TouchableOpacity>
 
-        <Text style={{color:'white', fontFamily: 'BebaNeue', fontSize: 20, marginTop: 30, alignSelf: 'left', marginLeft: 25,}}>Popular Anime</Text>
+        <Text style ={{color:'white', fontFamily: 'BebaNeue', fontSize: 20, marginTop: 30, alignSelf: 'left', marginLeft: 25,}}>Popular Anime</Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity
@@ -91,6 +104,8 @@ const styles = StyleSheet.create({
     width: 344,
     borderRadius: 10,
     height: 39,
+    color:'white',
+    paddingLeft: 15,
   },
   newsbutton: {
     backgroundColor:'yellow',

@@ -1,11 +1,11 @@
 import React from 'react';
 import {Image, View, TouchableOpacity, Text, StyleSheet} from 'react-native';
 
-const GButton = ({title, image}) => {
+const GButton = ({title, image, onPress}) => {
   return(
     <TouchableOpacity
         title="Naruto Fans"
-        // onPress={onPress}
+        onPress={onPress}
         style= {styles.button}
       >
       <Image source = {image}/>
